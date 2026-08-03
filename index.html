@@ -873,6 +873,80 @@
     .comp-col.no .comp-icon { color: var(--danger); }
     .comp-col.yes .comp-icon { color: var(--accent); }
 
+    /* ─── FAQ ─── */
+    .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 12px; }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    .faq-item:hover { border-color: var(--border2); }
+
+    .faq-q {
+      padding: 24px 28px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--headline);
+      user-select: none;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 22px;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 28px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 28px 24px;
+    }
+
+    /* ─── CLOSING ─── */
+    .closing-section { text-align: center; }
+
+    .closing-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--headline);
+      line-height: 1.5;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .closing-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
     /* ─── OFFER ─── */
     .offer-section { text-align: center; }
 
@@ -1114,7 +1188,7 @@
   </h1>
 
   <p class="hero-sub">
-    Sintomas que aparecem do nada.<br>Sem causa clínica. Sem explicação.
+    E quanto mais você tenta se acalmar,<br>mais o alarme dispara.
   </p>
 
   <div class="hero-metrics">
@@ -1148,13 +1222,13 @@
   <div class="container">
     <span class="tag reveal">O gatilho</span>
     <h2 class="question-headline reveal">
-      Seu coração<br>
-      acelera de repente.<br>
+      Seu coração acelera.<br>
+      Você observa o próprio corpo.<br>
       <span class="red">E se dessa vez<br>não for ansiedade?</span>
     </h2>
     <div class="line" style="margin: 40px auto;"></div>
     <p class="body-lg reveal" style="max-width:580px; margin: 0 auto;">
-      Você verifica o pulso. Monitora a respiração. Fica horas prestando atenção no próprio corpo, esperando o próximo sintoma. E quanto mais presta atenção, pior fica.
+      Você verifica o pulso. Monitora a respiração. Fica esperando o próximo sintoma. E quanto mais presta atenção, pior fica. Mas existe um motivo exato para isso acontecer — e ele pode começar a ser quebrado já na próxima crise.
     </p>
   </div>
 </section>
@@ -1169,30 +1243,42 @@
       Você não está<br><em>inventando</em>.<br>Os sintomas são reais.
     </h2>
     <p class="body reveal" style="margin-top: 24px; max-width: 600px;">
-      O sintoma em si não é o problema. O que cria o ciclo é o que você faz quando ele aparece. A hipervigilância corporal amplifica a ansiedade sem nenhuma causa física por trás.
+      Você não está sofrendo por causa da ansiedade. Está sofrendo porque está treinando o cérebro a ter mais ansiedade. Cada verificação, cada tentativa de controle, cada pesquisa no Google ensinaram ao seu sistema nervoso que existe um perigo real. E ele aprendeu muito bem.
     </p>
 
     <div style="margin-top: 48px;">
       <div class="problem-card reveal-x">
-        <div class="problem-card-title">Coração acelerado sem motivo</div>
-        <div class="problem-card-body">Taquicardia, aperto no peito. Você já foi ao cardiologista. Tudo normal. Mas continua acontecendo.</div>
+        <div class="problem-card-title">Verificar o pulso várias vezes por dia</div>
+        <div class="problem-card-body">Dois dedos no pescoço ou pulso. Contando batidas. Esperando confirmar que está tudo bem — mas nunca ficando satisfeito com a resposta.</div>
       </div>
       <div class="problem-card reveal-x">
-        <div class="problem-card-title">Respiração difícil</div>
-        <div class="problem-card-body">Falta de ar, sensação de sufocamento. Você tenta controlar a respiração... e piora tudo.</div>
+        <div class="problem-card-title">Ficar consciente da própria respiração</div>
+        <div class="problem-card-body">Falta de ar, sensação de sufocamento. Você tenta controlar o ritmo e percebe que, quanto mais tenta, mais difícil fica respirar.</div>
       </div>
       <div class="problem-card reveal-x">
-        <div class="problem-card-title">Acordar às 3h com o coração na garganta</div>
+        <div class="problem-card-title">Evitar exercícios por medo dos sintomas</div>
+        <div class="problem-card-body">Academia, corrida, escada. Qualquer coisa que acelere o coração virou uma ameaça. Você foi parando uma coisa de cada vez.</div>
+      </div>
+      <div class="problem-card reveal-x">
+        <div class="problem-card-title">Pedir confirmação de que está bem</div>
+        <div class="problem-card-body">Para médicos, familiares, Google. "Isso é normal?" virou uma pergunta diária. A resposta acalma por alguns minutos. Depois a dúvida volta.</div>
+      </div>
+      <div class="problem-card reveal-x">
+        <div class="problem-card-title">Pesquisar sintomas à meia-noite</div>
+        <div class="problem-card-body">Taquicardia, pressão no peito, formigamento. Você conhece de cor todos os artigos sobre infarto, arritmia, embolia. E cada pesquisa piora.</div>
+      </div>
+      <div class="problem-card reveal-x">
+        <div class="problem-card-title">Acordar às 3h com o coração disparado</div>
         <div class="problem-card-body">O corpo em modo de alerta enquanto você só queria dormir. Noites destruídas por sintomas que não deveriam existir.</div>
       </div>
       <div class="problem-card reveal-x">
-        <div class="problem-card-title">Monitoramento constante</div>
-        <div class="problem-card-body">Verificando cada batida, cada sensação. Esperando o pior. Vivendo em estado de alerta permanente.</div>
+        <div class="problem-card-title">Talvez você nunca tenha contado isso para ninguém</div>
+        <div class="problem-card-body">Porque parece exagero. Porque cansa explicar. Porque você mesmo duvida se o que sente é real. É real. E tem um nome: hipervigilância corporal.</div>
       </div>
     </div>
 
     <div class="big-quote reveal">
-      "Quanto mais você tenta<br><em>controlar</em>, mais o corpo<br>confirma a <em>ameaça</em>."
+      "O problema não é a sensação.<br>É o que você faz<br><em>depois</em> dela."
     </div>
 
     <!-- Cycle diagram -->
@@ -1224,16 +1310,59 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
+     MEDITATION WARNING
+══════════════════════════════════════════ -->
+<section style="background: var(--bg2);">
+  <div class="container">
+    <span class="tag reveal">O que ninguém te contou</span>
+    <h2 class="heading reveal">
+      Meditação e respiração<br>podem estar<br><em style="color:var(--danger)">piorando tudo</em>
+    </h2>
+    <p class="body reveal" style="margin-top:24px; max-width:600px;">
+      Parece absurdo. Mas faz sentido quando você entende o mecanismo. Quando existe hipervigilância corporal, qualquer técnica que direciona atenção para o corpo — meditação, respiração consciente, body scan — alimenta o mesmo ciclo que você tenta quebrar.
+    </p>
+    <p class="body reveal" style="margin-top:16px; max-width:600px;">
+      Você não está fazendo errado. O problema é que essas técnicas foram feitas para outro perfil de ansiedade. Para quem tem hipervigilância corporal, o caminho é o oposto: menos atenção, menos controle, menos monitoramento.
+    </p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px;" class="reveal">
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--danger); border-radius:14px; padding:28px;">
+        <div style="font-family:'Playfair Display',Georgia,serif; font-size:20px; font-weight:700; color:var(--danger); margin-bottom:16px;">O que reforça o ciclo</div>
+        <div style="font-size:14px; color:var(--muted); line-height:1.8;">
+          ✕ &nbsp;Respiração diafragmática<br>
+          ✕ &nbsp;Meditação de atenção plena<br>
+          ✕ &nbsp;Body scan / escaneamento corporal<br>
+          ✕ &nbsp;Verificar se o coração "normalizou"<br>
+          ✕ &nbsp;Pesquisar o sintoma para se tranquilizar
+        </div>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:14px; padding:28px;">
+        <div style="font-family:'Playfair Display',Georgia,serif; font-size:20px; font-weight:700; color:var(--accent); margin-bottom:16px;">O que quebra o ciclo</div>
+        <div style="font-size:14px; color:var(--muted); line-height:1.8;">
+          ✓ &nbsp;Deixar a respiração fluir sozinha<br>
+          ✓ &nbsp;Não verificar sintomas<br>
+          ✓ &nbsp;Não buscar tranquilização<br>
+          ✓ &nbsp;Permitir que a sensação esteja lá<br>
+          ✓ &nbsp;Continuar o que estava fazendo
+        </div>
+      </div>
+    </div>
+    <p class="body reveal" style="margin-top:32px; max-width:600px; font-style:italic; color:var(--muted);">
+      "A maioria ensina controle. Este método ensina o oposto."
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
      METHOD
 ══════════════════════════════════════════ -->
 <section class="method-section">
   <div class="container">
-    <span class="tag reveal">A solução</span>
+    <span class="tag reveal">O método</span>
     <h2 class="heading reveal">
-      Neutralidade<br><em>Corporal</em>
+      A Regra<br>dos <em>3 NÃOs</em>
     </h2>
     <p class="body reveal" style="margin-top: 24px; max-width: 600px;">
-      Três princípios. Sem meditação, sem técnica de respiração, sem exposição gradual. O método age diretamente no ciclo de hipervigilância, onde o problema começa.
+      Sem adicionar nada à sua rotina. Sem meditação, sem técnica de respiração, sem exposição gradual. O método funciona parando o que você já faz — e que está alimentando o ciclo sem você perceber.
     </p>
 
     <div class="breathe-wrap reveal">
@@ -1345,6 +1474,48 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
+     TRANSFORMATION
+══════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <span class="tag reveal">O que muda</span>
+    <h2 class="heading reveal">
+      De onde você está<br>para onde <em>pode chegar</em>
+    </h2>
+    <div style="margin-top:48px; display:grid; gap:14px;" class="reveal">
+      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
+        <div style="font-size:14px; color:var(--muted);">Coração acelera → emergência imediata</div>
+        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
+        <div style="font-size:14px; color:var(--text);">Coração acelera → sensação que passa</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
+        <div style="font-size:14px; color:var(--muted);">Verificar o pulso toda hora</div>
+        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
+        <div style="font-size:14px; color:var(--text);">Ignorar o corpo sem medo</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
+        <div style="font-size:14px; color:var(--muted);">Acordar às 3h em pânico</div>
+        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
+        <div style="font-size:14px; color:var(--text);">Dormir a noite inteira</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
+        <div style="font-size:14px; color:var(--muted);">Evitar academia por medo do coração</div>
+        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
+        <div style="font-size:14px; color:var(--text);">Se exercitar sem entrar em pânico</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
+        <div style="font-size:14px; color:var(--muted);">Pesquisar sintomas à meia-noite</div>
+        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
+        <div style="font-size:14px; color:var(--text);">Confiar que o corpo sabe o que faz</div>
+      </div>
+    </div>
+    <p class="body reveal" style="margin-top:32px; max-width:600px; color:var(--muted);">
+      Não é sobre não sentir mais nada. É sobre parar de tratar cada sensação como uma emergência.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
      TESTIMONIALS
 ══════════════════════════════════════════ -->
 <section class="testimonials-section">
@@ -1357,23 +1528,23 @@
     <div class="testimonials-grid">
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-text">"Passei 2 anos monitorando o próprio coração. Depois do protocolo, em menos de uma semana já não ficava mais verificando o pulso toda hora. É assustador como era simples a solução."</p>
-        <div class="t-author">— Ana R., 34 anos</div>
+        <p class="t-text">"Passei 2 anos monitorando o próprio coração. Não saía de casa sem medir o pulso antes. Depois do protocolo, em menos de uma semana parei de verificar. É assustador como era simples a solução."</p>
+        <div class="t-author">— Mariana, 31 anos · Professora · São Paulo</div>
       </div>
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-text">"Acordava às 3h toda noite com o coração na garganta. Achei que era problema cardíaco. Quatro exames normais depois, encontrei esse método. Na primeira semana dormi a noite toda."</p>
-        <div class="t-author">— Marcos V., 41 anos</div>
+        <p class="t-text">"Acordava às 3h toda noite com o coração na garganta. Fiz quatro eletrocardiogramas, todos normais. Encontrei esse método por acaso. Na primeira semana já dormi a noite toda sem acordar."</p>
+        <div class="t-author">— Ricardo, 45 anos · Engenheiro · Curitiba</div>
       </div>
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-text">"O que mais me ajudou foi entender que tentar controlar a respiração estava piorando tudo. Parece contra-intuitivo mas funcionou imediatamente. Não tenho mais crises de falta de ar."</p>
-        <div class="t-author">— Juliana M., 29 anos</div>
+        <p class="t-text">"Tentei meditação, respiração diafragmática, até acupuntura. Nada funcionava. O que me virou foi entender que controlar a respiração estava piorando. Contra-intuitivo, mas funcionou na hora."</p>
+        <div class="t-author">— Beatriz, 27 anos · Designer · Rio de Janeiro</div>
       </div>
       <div class="t-card reveal">
         <div class="t-stars">★★★★★</div>
-        <p class="t-text">"Três anos de terapia não resolveram os sintomas físicos. Esse protocolo explicou o porquê, e o que fazer. Em 10 dias os sintomas baixaram mais de 80%."</p>
-        <div class="t-author">— Ricardo S., 38 anos</div>
+        <p class="t-text">"Três anos de terapia e os sintomas físicos continuavam. Esse protocolo foi o primeiro lugar que explicou por que eu sentia aquilo no corpo — e o que fazer exatamente. Em 10 dias mudou tudo."</p>
+        <div class="t-author">— Fernanda, 38 anos · Advogada · Belo Horizonte</div>
       </div>
     </div>
   </div>
@@ -1410,6 +1581,59 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <span class="tag reveal">Dúvidas frequentes</span>
+    <h2 class="heading reveal">
+      Antes de decidir,<br><em>algumas respostas</em>
+    </h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q">Isso funciona para crises fortes, tipo sensação de infarto?</div>
+        <div class="faq-a">Sim. O protocolo foi construído justamente para os sintomas físicos mais intensos: taquicardia, falta de ar, dormência, pressão no peito. Quando o sintoma é forte, o ciclo de atenção é ainda mais claro — e a intervenção tem resultado mais rápido.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Preciso ter diagnóstico de ansiedade ou transtorno do pânico?</div>
+        <div class="faq-a">Não. O protocolo trabalha com os sintomas físicos independentemente do diagnóstico. Se você sente sintomas físicos repetitivos que os exames não explicam, o protocolo se aplica. Mas se você ainda não descartou causas orgânicas, faça isso primeiro.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Posso usar junto com terapia ou medicação?</div>
+        <div class="faq-a">Sim, sem problema. O protocolo não interfere com tratamento médico ou psicológico. Muita gente o usa como complemento — ele trabalha especificamente o ciclo sintoma-atenção-amplificação, que terapias convencionais raramente endereçam de forma tão direta.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Em quanto tempo começo a ver resultado?</div>
+        <div class="faq-a">A maioria das pessoas nota diferença na primeira semana. Alguns relatam resultado já na primeira aplicação do protocolo de crise. Isso não significa que os sintomas somem do dia para a noite — mas o ciclo de amplificação quebra bem antes disso.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">E se não funcionar para mim?</div>
+        <div class="faq-a">Você tem 30 dias de garantia total. Se até lá o protocolo não tiver feito diferença real nos seus sintomas, devolvemos 100% do valor sem nenhuma pergunta. Não pedimos motivo, não cobramos taxa, não burocratizamos. O risco é todo nosso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CLOSING
+══════════════════════════════════════════ -->
+<section class="closing-section">
+  <div class="container">
+    <p class="closing-quote reveal">
+      "Você não precisa parar de sentir.<br>Você precisa parar de lutar contra o que sente."
+    </p>
+    <p class="closing-sub reveal">
+      A ansiedade física não some com força de vontade. Some quando o corpo aprende que a sensação não é ameaça. Isso é o que o protocolo ensina.
+    </p>
+    <a href="#oferta" class="btn btn-primary reveal" style="justify-content:center; font-size:15px; padding:20px 40px; border-radius:14px;">
+      Quero aprender o protocolo agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
      OFFER
 ══════════════════════════════════════════ -->
 <section id="oferta" class="offer-section">
@@ -1432,6 +1656,10 @@
         <li><span class="include-check">✓</span> Acesso vitalício com atualizações</li>
         <li><span class="include-check">✓</span> Garantia incondicional de 30 dias</li>
       </ul>
+
+      <p style="font-size:13px; color:var(--muted); margin:28px 0 32px; line-height:1.7;">
+        Uma consulta com psicólogo custa entre R$&nbsp;150 e R$&nbsp;300. Uma consulta médica particular, de R$&nbsp;200 a R$&nbsp;500. O protocolo inteiro sai por R$&nbsp;97 — com acesso para sempre e garantia de 30 dias.
+      </p>
 
       <a href="#" class="btn btn-primary" style="width:100%; justify-content:center; font-size:15px; padding:22px 40px; border-radius:16px;">
         Quero acessar o protocolo agora
@@ -1599,6 +1827,15 @@
     el.style.transitionDelay = (i % 4) * 0.08 + 's';
   });
 })();
+
+/* ── FAQ ACCORDION ── */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 
 /* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

@@ -1229,22 +1229,25 @@
       flex-wrap: wrap;
     }
 
-    .payment-badge {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 5px 12px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-
     .payment-label {
       font-size: 11px;
       color: var(--muted);
       margin-right: 4px;
     }
+
+    .pay-logo {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px 8px;
+      opacity: 0.88;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .pay-logo:hover { opacity: 1; transform: translateY(-1px); }
 
     /* guarantee redesign */
     .guarantee {
@@ -2004,10 +2007,10 @@
 
       <div class="payment-row">
         <span class="payment-label">Pague com</span>
-        <span class="payment-badge">PIX</span>
-        <span class="payment-badge">VISA</span>
-        <span class="payment-badge">MASTER</span>
-        <span class="payment-badge">BOLETO</span>
+        <img src="pay-pix.png" alt="PIX" class="pay-logo">
+        <img src="pay-visa.png" alt="Visa" class="pay-logo">
+        <img src="pay-mastercard.png" alt="Mastercard" class="pay-logo">
+        <img src="pay-boleto.png" alt="Boleto" class="pay-logo">
       </div>
 
       <div class="guarantee" style="margin-top:32px;">

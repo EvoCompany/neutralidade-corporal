@@ -13,21 +13,24 @@
     :root {
       --bg:         #060810;
       --bg2:        #0a0c16;
-      --surface:    #10131f;
-      --surface2:   #181b2a;
-      --border:     rgba(148,160,220,0.08);
-      --border2:    rgba(148,160,220,0.18);
-      --accent:     #2fffa0;
-      --accent-dim: rgba(47,255,160,0.12);
-      --accent-glow:rgba(47,255,160,0.25);
+      --surface:    #0e1120;
+      --surface2:   #161929;
+      --border:     rgba(148,160,220,0.07);
+      --border2:    rgba(148,160,220,0.16);
+      --accent:     #28e88c;
+      --accent-dim: rgba(40,232,140,0.11);
+      --accent-glow:rgba(40,232,140,0.22);
       --danger:     #ff3955;
       --danger-dim: rgba(255,57,85,0.12);
       --danger-glow:rgba(255,57,85,0.25);
       --gold:       #f0be5a;
       --gold-dim:   rgba(240,190,90,0.12);
-      --text:       #c8cce0;
-      --muted:      #525670;
-      --headline:   #ecebf5;
+      --cta:        #f5a420;
+      --cta-dark:   #c47c08;
+      --cta-dim:    rgba(245,164,32,0.14);
+      --text:       #c2c7dd;
+      --muted:      #4e5270;
+      --headline:   #eceaf6;
       --white:      #f4f4ff;
     }
 
@@ -182,6 +185,26 @@
 
     .btn-primary:active { transform: scale(0.98); }
 
+    /* Purchase-intent CTA — visually distinct from accent links */
+    .btn-cta {
+      background: linear-gradient(135deg, #f5a420 0%, #e8920a 100%);
+      color: #0a0800;
+      padding: 20px 44px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      box-shadow: 0 2px 0 rgba(255,255,255,0.22) inset, 0 8px 32px rgba(232,146,10,0.3), 0 2px 12px rgba(0,0,0,0.5);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 2px 0 rgba(255,255,255,0.22) inset, 0 20px 48px rgba(232,146,10,0.38), 0 4px 16px rgba(0,0,0,0.5);
+    }
+
+    .btn-cta:active { transform: scale(0.98); }
+
     .btn-lg { padding: 20px 48px; font-size: 15px; }
 
     .btn svg {
@@ -193,14 +216,18 @@
     .btn:hover svg { transform: translateX(5px); }
 
     .btn-sm {
-      background: var(--accent);
-      color: #060810;
+      background: var(--cta);
+      color: #0a0800;
       padding: 9px 20px;
-      border-radius: 100px;
+      border-radius: 8px;
       font-size: 11px;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 4px 14px rgba(232,146,10,0.28);
     }
 
-    .btn-sm:hover { transform: translateY(-2px); box-shadow: 0 2px 0 rgba(255,255,255,0.15) inset, 0 8px 20px rgba(0,0,0,0.45); }
+    .btn-sm:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 8px 20px rgba(232,146,10,0.35); }
 
     /* ─── TYPOGRAPHY ─── */
     .tag {
@@ -1001,7 +1028,7 @@
       margin-bottom: 40px;
     }
 
-    .offer-title em { font-style: italic; color: var(--accent); }
+    .offer-title em { font-style: italic; color: var(--cta); }
 
     .price-from {
       font-size: 16px;
@@ -1014,7 +1041,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 84px;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--cta);
       line-height: 1;
       text-shadow: none;
     }
@@ -1060,6 +1087,180 @@
     }
 
     .guarantee-text { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ─── OFFER EXTRAS ─── */
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .price-economy {
+      display: inline-block;
+      background: rgba(40,232,140,0.12);
+      border: 1px solid rgba(40,232,140,0.25);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .price-installment {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+      margin-bottom: 44px;
+    }
+
+    .price-installment strong { color: var(--text); }
+
+    .cta-mini-testi {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .cta-mini-testi-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid rgba(40,232,140,0.2);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .cta-mini-testi-text {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .cta-mini-testi-text em {
+      font-style: normal;
+      color: var(--headline);
+      font-weight: 600;
+    }
+
+    .cta-micro {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-micro span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-micro span::before {
+      content: '·';
+      display: none;
+    }
+
+    .payment-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .payment-badge {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .payment-label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 4px;
+    }
+
+    /* guarantee redesign */
+    .guarantee {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guarantee::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .guarantee-badge {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    /* Mid-page CTA */
+    .midcta {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      padding: 48px 52px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .midcta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cta);
+      margin-bottom: 16px;
+    }
+
+    .midcta-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 400;
+      color: var(--headline);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .midcta-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 640px) {
+      .midcta { padding: 36px 24px; }
+    }
 
     /* ─── FOOTER ─── */
     footer {
@@ -1470,6 +1671,16 @@
         <div class="bonus-desc">Para quem acorda às 3h com o coração acelerado. Uma sequência para fazer o corpo sair do estado de alerta e voltar a dormir.</div>
       </div>
     </div>
+
+    <div class="midcta reveal">
+      <div class="midcta-label">Acesso imediato</div>
+      <div class="midcta-headline">Pronto para quebrar o ciclo?</div>
+      <p class="midcta-sub">R$ 97 · pagamento único · garantia de 30 dias</p>
+      <a href="#oferta" class="btn btn-cta" style="width:100%; justify-content:center;">
+        Quero começar agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1626,9 +1837,9 @@
     <p class="closing-sub reveal">
       A ansiedade física não some com força de vontade. Some quando o corpo aprende que a sensação não é ameaça. Isso é o que o protocolo ensina.
     </p>
-    <a href="#oferta" class="btn btn-primary reveal" style="justify-content:center; font-size:15px; padding:20px 40px; border-radius:14px;">
+    <a href="#oferta" class="btn btn-cta reveal" style="justify-content:center;">
       Quero aprender o protocolo agora
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 </section>
@@ -1646,8 +1857,11 @@
       </h2>
 
       <p class="price-from">De R$ 197,00</p>
-      <div class="price-main">R$ 97</div>
-      <p class="price-note">pagamento único · acesso vitalício</p>
+      <div class="price-row">
+        <div class="price-main">R$ 97</div>
+      </div>
+      <div class="price-economy">Economia de R$&nbsp;100</div>
+      <p class="price-installment">ou <strong>12x de R$&nbsp;8,08</strong> no cartão · acesso vitalício</p>
 
       <ul class="include-list">
         <li><span class="include-check">✓</span> 6 capítulos completos do protocolo</li>
@@ -1657,17 +1871,40 @@
         <li><span class="include-check">✓</span> Garantia incondicional de 30 dias</li>
       </ul>
 
-      <p style="font-size:13px; color:var(--muted); margin:28px 0 32px; line-height:1.7;">
-        Uma consulta com psicólogo custa entre R$&nbsp;150 e R$&nbsp;300. Uma consulta médica particular, de R$&nbsp;200 a R$&nbsp;500. O protocolo inteiro sai por R$&nbsp;97 — com acesso para sempre e garantia de 30 dias.
+      <p style="font-size:13px; color:var(--text); margin:0 0 32px; line-height:1.75; opacity:0.7;">
+        Uma consulta com psicólogo custa entre R$&nbsp;150 e R$&nbsp;300. Uma consulta médica particular, de R$&nbsp;200 a R$&nbsp;500. O protocolo inteiro sai por R$&nbsp;97 — acesso permanente e garantia de 30 dias.
       </p>
 
-      <a href="#" class="btn btn-primary" style="width:100%; justify-content:center; font-size:15px; padding:22px 40px; border-radius:16px;">
-        Quero acessar o protocolo agora
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="cta-mini-testi">
+        <div class="cta-mini-testi-avatar">M</div>
+        <div class="cta-mini-testi-text">
+          <em>"Funcionou na primeira semana. Parei de monitorar o coração e dormi a noite inteira."</em><br>
+          Mariana · 31 anos · Professora · São Paulo
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-cta" style="width:100%; justify-content:center;">
+        Quero encerrar esse ciclo — R$ 97
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <div class="guarantee">
-        <div class="guarantee-icon">🛡️</div>
+      <p class="cta-micro">
+        Acesso em menos de 2 minutos &nbsp;·&nbsp; Compra 100% segura &nbsp;·&nbsp; Garantia de 30 dias
+      </p>
+
+      <div class="payment-row">
+        <span class="payment-label">Pague com</span>
+        <span class="payment-badge">PIX</span>
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">MASTER</span>
+        <span class="payment-badge">BOLETO</span>
+      </div>
+
+      <div class="guarantee" style="margin-top:32px;">
+        <svg class="guarantee-badge" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4L6 12v14c0 10 7.6 19.3 18 22 10.4-2.7 18-12 18-22V12L24 4z" fill="rgba(40,232,140,0.1)" stroke="#28e88c" stroke-width="1.5"/>
+          <path d="M16 24l5.5 5.5L32 19" stroke="#28e88c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <div>
           <div class="guarantee-title">Garantia de 30 dias</div>
           <div class="guarantee-text">Se em 30 dias o protocolo não fizer diferença real nos seus sintomas, devolvemos 100% do valor. Sem perguntas, sem burocracia.</div>

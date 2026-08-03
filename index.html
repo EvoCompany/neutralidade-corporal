@@ -433,6 +433,8 @@
       animation: fadeUp 0.9s ease 0.75s forwards;
     }
 
+    .hero-metrics > div { text-align: center; }
+
     .metric-val {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 44px;
@@ -761,6 +763,7 @@
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(.23,1,.32,1);
+      text-align: center;
     }
 
     .bonus-card::before {
@@ -1103,7 +1106,9 @@
       color: var(--accent);
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin: 0 auto 12px;
+      display: block;
+      width: fit-content;
     }
 
     .price-installment {
@@ -1111,6 +1116,7 @@
       color: var(--muted);
       margin-top: 6px;
       margin-bottom: 44px;
+      text-align: center;
     }
 
     .price-installment strong { color: var(--text); }
@@ -1342,7 +1348,7 @@
       width: 64px;
       height: 64px;
       object-fit: contain;
-      margin-bottom: 16px;
+      margin: 0 auto 16px;
       display: block;
     }
 
@@ -1499,7 +1505,7 @@
     <h2 class="heading reveal">
       Você não está<br><em>inventando</em>.<br>Os sintomas são reais.
     </h2>
-    <p class="body reveal" style="margin-top: 24px; max-width: 600px;">
+    <p class="body reveal" style="margin-top: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
       Você não está sofrendo por causa da ansiedade. Está sofrendo porque está treinando o cérebro a ter mais ansiedade. Cada verificação, cada tentativa de controle, cada pesquisa no Google ensinaram ao seu sistema nervoso que existe um perigo real. E ele aprendeu muito bem.
     </p>
 
@@ -1575,10 +1581,10 @@
     <h2 class="heading reveal">
       Meditação e respiração<br>podem estar<br><em style="color:var(--danger)">piorando tudo</em>
     </h2>
-    <p class="body reveal" style="margin-top:24px; max-width:600px;">
+    <p class="body reveal" style="margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto;">
       Parece absurdo. Mas faz sentido quando você entende o mecanismo. Quando existe hipervigilância corporal, qualquer técnica que direciona atenção para o corpo — meditação, respiração consciente, body scan — alimenta o mesmo ciclo que você tenta quebrar.
     </p>
-    <p class="body reveal" style="margin-top:16px; max-width:600px;">
+    <p class="body reveal" style="margin-top:16px; max-width:600px; margin-left:auto; margin-right:auto;">
       Você não está fazendo errado. O problema é que essas técnicas foram feitas para outro perfil de ansiedade. Para quem tem hipervigilância corporal, o caminho é o oposto: menos atenção, menos controle, menos monitoramento.
     </p>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px;" class="reveal">
@@ -1603,7 +1609,7 @@
         </div>
       </div>
     </div>
-    <p class="body reveal" style="margin-top:32px; max-width:600px; font-style:italic; color:var(--muted);">
+    <p class="body reveal" style="margin-top:32px; max-width:600px; font-style:italic; color:var(--muted); margin-left:auto; margin-right:auto;">
       "A maioria ensina controle. Este método ensina o oposto."
     </p>
   </div>
@@ -1618,7 +1624,7 @@
     <h2 class="heading reveal">
       A Regra<br>dos <em>3 NÃOs</em>
     </h2>
-    <p class="body reveal" style="margin-top: 24px; max-width: 600px;">
+    <p class="body reveal" style="margin-top: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
       Sem adicionar nada à sua rotina. Sem meditação, sem técnica de respiração, sem exposição gradual. O método funciona parando o que você já faz — e que está alimentando o ciclo sem você perceber.
     </p>
 
@@ -1732,7 +1738,7 @@
       <div class="midcta-label">Acesso imediato</div>
       <div class="midcta-headline">Pronto para quebrar o ciclo?</div>
       <p class="midcta-sub">R$ 97 · pagamento único · garantia de 30 dias</p>
-      <a href="#oferta" class="btn btn-cta" style="width:100%; justify-content:center;">
+      <a href="#oferta" class="btn btn-cta" style="display:flex; width:100%; justify-content:center;">
         Quero começar agora
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1776,7 +1782,7 @@
         <div style="font-size:14px; color:var(--text);">Confiar que o corpo sabe o que faz</div>
       </div>
     </div>
-    <p class="body reveal" style="margin-top:32px; max-width:600px; color:var(--muted);">
+    <p class="body reveal" style="margin-top:32px; max-width:600px; color:var(--muted); margin-left:auto; margin-right:auto;">
       Não é sobre não sentir mais nada. É sobre parar de tratar cada sensação como uma emergência.
     </p>
   </div>
@@ -1893,7 +1899,7 @@
     <p class="closing-sub reveal">
       A ansiedade física não some com força de vontade. Some quando o corpo aprende que a sensação não é ameaça. Isso é o que o protocolo ensina.
     </p>
-    <a href="#oferta" class="btn btn-cta reveal" style="justify-content:center;">
+    <a href="#oferta" class="btn btn-cta reveal" style="display:inline-flex; justify-content:center; margin: 0 auto;">
       Quero aprender o protocolo agora
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -1939,7 +1945,7 @@
         </div>
       </div>
 
-      <a href="#" class="btn btn-cta" style="width:100%; justify-content:center;">
+      <a href="#" class="btn btn-cta" style="display:flex; width:100%; justify-content:center;">
         Quero encerrar esse ciclo — R$ 97
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>

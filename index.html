@@ -1346,8 +1346,34 @@
 
     .reveal-x.in { opacity: 1; transform: none; }
 
+    /* ─── MEDITATION COLS ─── */
+    .meditation-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ─── TRANSFORMATION TABLE ─── */
+    .transform-table { margin-top: 48px; display: grid; gap: 14px; }
+
+    .transform-row {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 12px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    .transform-before { font-size: 14px; color: var(--muted); }
+    .transform-arrow { text-align: center; color: var(--accent); font-size: 18px; }
+    .transform-after { font-size: 14px; color: var(--text); }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
+      section { padding: 80px 0; }
       .comp-grid { grid-template-columns: 1fr; }
       .bonus-grid { grid-template-columns: 1fr; }
       .hero-metrics { gap: 28px; }
@@ -1356,6 +1382,14 @@
       .principle { grid-template-columns: 1fr; gap: 12px; }
       .principle-num { font-size: 40px; }
       .sticky-inner { gap: 12px; }
+      .meditation-cols { grid-template-columns: 1fr; }
+      .transform-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 20px;
+      }
+      .transform-arrow { text-align: left; font-size: 16px; }
+      .btn-cta { padding: 18px 20px; font-size: 15px; }
     }
 
     /* ─── EDITORIAL PHOTO BREAK ─── */
@@ -1633,7 +1667,7 @@
     <p class="body reveal" style="margin-top:16px; max-width:600px; margin-left:auto; margin-right:auto;">
       Você não está fazendo errado. O problema é que essas técnicas foram feitas para outro perfil de ansiedade. Para quem tem hipervigilância corporal, o caminho é o oposto: menos atenção, menos controle, menos monitoramento.
     </p>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px;" class="reveal">
+    <div class="meditation-cols reveal" style="margin-top:44px;">
       <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--danger); border-radius:14px; padding:28px;">
         <div style="font-family:'Playfair Display',Georgia,serif; font-size:20px; font-weight:700; color:var(--danger); margin-bottom:16px;">O que reforça o ciclo</div>
         <div style="font-size:14px; color:var(--muted); line-height:1.8;">
@@ -1801,31 +1835,31 @@
     <h2 class="heading reveal">
       De onde você está<br>para onde <em>pode chegar</em>
     </h2>
-    <div style="margin-top:48px; display:grid; gap:14px;" class="reveal">
-      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
-        <div style="font-size:14px; color:var(--muted);">Coração acelera → emergência imediata</div>
-        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
-        <div style="font-size:14px; color:var(--text);">Coração acelera → sensação que passa</div>
+    <div class="transform-table reveal">
+      <div class="transform-row">
+        <div class="transform-before">Coração acelera → emergência imediata</div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">Coração acelera → sensação que passa</div>
       </div>
-      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
-        <div style="font-size:14px; color:var(--muted);">Verificar o pulso toda hora</div>
-        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
-        <div style="font-size:14px; color:var(--text);">Ignorar o corpo sem medo</div>
+      <div class="transform-row">
+        <div class="transform-before">Verificar o pulso toda hora</div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">Ignorar o corpo sem medo</div>
       </div>
-      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
-        <div style="font-size:14px; color:var(--muted);">Acordar às 3h em pânico</div>
-        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
-        <div style="font-size:14px; color:var(--text);">Dormir a noite inteira</div>
+      <div class="transform-row">
+        <div class="transform-before">Acordar às 3h em pânico</div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">Dormir a noite inteira</div>
       </div>
-      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
-        <div style="font-size:14px; color:var(--muted);">Evitar academia por medo do coração</div>
-        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
-        <div style="font-size:14px; color:var(--text);">Se exercitar sem entrar em pânico</div>
+      <div class="transform-row">
+        <div class="transform-before">Evitar academia por medo do coração</div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">Se exercitar sem entrar em pânico</div>
       </div>
-      <div style="display:grid; grid-template-columns:1fr 40px 1fr; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px;">
-        <div style="font-size:14px; color:var(--muted);">Pesquisar sintomas à meia-noite</div>
-        <div style="text-align:center; color:var(--accent); font-size:18px;">→</div>
-        <div style="font-size:14px; color:var(--text);">Confiar que o corpo sabe o que faz</div>
+      <div class="transform-row">
+        <div class="transform-before">Pesquisar sintomas à meia-noite</div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">Confiar que o corpo sabe o que faz</div>
       </div>
     </div>
     <p class="body reveal" style="margin-top:32px; max-width:600px; color:var(--muted); margin-left:auto; margin-right:auto;">

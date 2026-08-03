@@ -1570,13 +1570,19 @@
      EDITORIAL PHOTO BREAK
 ══════════════════════════════════════════ -->
 <div class="editorial-photo">
-  <img
-    class="editorial-img"
-    src="https://d8j0ntlcm91z4.cloudfront.net/user_3HBW8GjBm7Cptv482CZZxM95cK8/hf_20260803_170701_9d6e63fe-39ed-48a1-aba8-f36614cdf3fc.png"
-    alt=""
-    fetchpriority="high"
-    decoding="async"
-  >
+  <picture>
+    <source srcset="editorial-mob.webp" media="(max-width: 640px)" type="image/webp">
+    <source srcset="editorial.webp" type="image/webp">
+    <img
+      class="editorial-img"
+      src="editorial.webp"
+      alt=""
+      width="980"
+      height="560"
+      fetchpriority="high"
+      decoding="async"
+    >
+  </picture>
   <div class="editorial-overlay"></div>
 </div>
 
@@ -2106,10 +2112,11 @@
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
   const isMobile = window.innerWidth < 640;
+  let cw, ch;
 
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    cw = canvas.width = window.innerWidth;
+    ch = canvas.height = window.innerHeight;
   }
   resize();
   window.addEventListener('resize', resize, { passive: true });
@@ -2118,8 +2125,8 @@
   const GRID = isMobile ? 100 : 70;
   const CONNECT_DIST = isMobile ? 80 : 110;
   const particles = Array.from({ length: COUNT }, () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
+    x: Math.random() * cw,
+    y: Math.random() * ch,
     vx: (Math.random() - 0.5) * 0.25,
     vy: (Math.random() - 0.5) * 0.25,
     r: Math.random() * 1.5 + 0.5,
@@ -2128,20 +2135,20 @@
 
   let raf;
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, cw, ch);
 
     ctx.strokeStyle = 'rgba(148, 160, 220, 0.035)';
     ctx.lineWidth = 1;
-    for (let x = 0; x < canvas.width; x += GRID) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+    for (let x = 0; x < cw; x += GRID) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, ch); ctx.stroke();
     }
-    for (let y = 0; y < canvas.height; y += GRID) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+    for (let y = 0; y < ch; y += GRID) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(cw, y); ctx.stroke();
     }
 
     particles.forEach(p => {
-      p.x = (p.x + p.vx + canvas.width) % canvas.width;
-      p.y = (p.y + p.vy + canvas.height) % canvas.height;
+      p.x = (p.x + p.vx + cw) % cw;
+      p.y = (p.y + p.vy + ch) % ch;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(47,255,160,${p.opacity})`;

@@ -556,23 +556,18 @@
       margin-bottom: 32px;
     }
 
-    .cycle-orb {
+    .cycle-orb-img {
       width: 90px;
       height: 90px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,57,85,0.3);
-      background: var(--surface2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: contain;
+      display: block;
       margin: 0 auto 16px;
       animation: orbPulse 2.5s ease-in-out infinite;
-      font-size: 28px;
     }
 
     @keyframes orbPulse {
-      0%, 100% { box-shadow: 0 4px 16px rgba(0,0,0,0.4); opacity: 0.85; }
-      50% { box-shadow: 0 8px 32px rgba(0,0,0,0.6); opacity: 1; }
+      0%, 100% { opacity: 0.8; filter: brightness(0.9); }
+      50% { opacity: 1; filter: brightness(1.1); }
     }
 
     .cycle-grid {
@@ -1311,6 +1306,54 @@
       .sticky-inner { gap: 12px; }
     }
 
+    /* ─── EDITORIAL PHOTO BREAK ─── */
+    .editorial-photo {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin: -40px 0;
+      z-index: 2;
+    }
+
+    .editorial-img {
+      width: 100%;
+      height: clamp(280px, 38vw, 480px);
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      filter: saturate(0.75) brightness(0.7);
+    }
+
+    .editorial-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        var(--bg) 0%,
+        transparent 22%,
+        transparent 72%,
+        var(--bg) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* ─── BONUS IMAGES ─── */
+    .bonus-img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* ─── CYCLE ORB IMAGE ─── */
+    .cycle-orb-img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      display: block;
+    }
+
     /* ─── CURSOR GLOW ─── */
     .cursor-glow {
       position: fixed;
@@ -1416,6 +1459,19 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
+     EDITORIAL PHOTO BREAK
+══════════════════════════════════════════ -->
+<div class="editorial-photo">
+  <img
+    class="editorial-img"
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_3HBW8GjBm7Cptv482CZZxM95cK8/hf_20260803_170701_9d6e63fe-39ed-48a1-aba8-f36614cdf3fc.png"
+    alt=""
+    loading="lazy"
+  >
+  <div class="editorial-overlay"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
      THE QUESTION
 ══════════════════════════════════════════ -->
 <section class="section-question">
@@ -1485,7 +1541,7 @@
     <!-- Cycle diagram -->
     <div class="cycle-box reveal">
       <div class="cycle-center-label">
-        <div class="cycle-orb">🔄</div>
+        <img class="cycle-orb-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3HBW8GjBm7Cptv482CZZxM95cK8/hf_20260803_170701_fae69a7b-9b88-4ac6-baf6-23580f89e966.svg" alt="" loading="lazy">
         <div class="tag">Ciclo de Hipervigilância</div>
       </div>
       <div class="cycle-grid">
@@ -1661,12 +1717,12 @@
 
     <div class="bonus-grid">
       <div class="bonus-card reveal">
-        <span class="bonus-emoji">⚡</span>
+        <img class="bonus-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3HBW8GjBm7Cptv482CZZxM95cK8/hf_20260803_170701_2163f21b-f1c4-4f9b-8678-659e13d12a16.svg" alt="" loading="lazy">
         <div class="bonus-title">Protocolo de Crise</div>
         <div class="bonus-desc">Para uso imediato quando o sintoma aparece com força. Instruções precisas, passo a passo, para quebrar a crise em minutos.</div>
       </div>
       <div class="bonus-card reveal">
-        <span class="bonus-emoji">🌙</span>
+        <img class="bonus-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3HBW8GjBm7Cptv482CZZxM95cK8/hf_20260803_170701_a5dc9330-0bd0-4c73-8860-e51229179184.svg" alt="" loading="lazy">
         <div class="bonus-title">Protocolo Noturno</div>
         <div class="bonus-desc">Para quem acorda às 3h com o coração acelerado. Uma sequência para fazer o corpo sair do estado de alerta e voltar a dormir.</div>
       </div>

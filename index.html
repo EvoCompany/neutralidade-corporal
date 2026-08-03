@@ -7,8 +7,28 @@
   <title>Neutralidade Corporal — Ansiedade Física</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <!-- Non-blocking font load: page renders immediately with fallback fonts, custom fonts swap in -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"></noscript>
   <style>
+    /* Fallback fonts sized to match custom fonts — reduces CLS during font swap */
+    @font-face {
+      font-family: 'Playfair Display Fallback';
+      src: local('Georgia');
+      size-adjust: 108%;
+      ascent-override: 88%;
+      descent-override: 24%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'DM Sans Fallback';
+      src: local('Arial');
+      size-adjust: 96%;
+      ascent-override: 95%;
+      descent-override: 20%;
+      line-gap-override: 0%;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -38,7 +58,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', 'DM Sans Fallback', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
@@ -115,7 +135,7 @@
     }
 
     .cd-num {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 26px;
       font-weight: 700;
       color: var(--danger);
@@ -242,7 +262,7 @@
     }
 
     .display {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(52px, 9vw, 100px);
       font-weight: 400;
       line-height: 1.02;
@@ -252,7 +272,7 @@
     .display em { font-style: italic; color: var(--accent); }
 
     .heading {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(38px, 6vw, 68px);
       font-weight: 400;
       line-height: 1.08;
@@ -415,7 +435,7 @@
     }
 
     .hero-sub {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(20px, 3vw, 28px);
       font-weight: 400;
       font-style: italic;
@@ -437,7 +457,7 @@
     .hero-metrics > div { text-align: center; }
 
     .metric-val {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 44px;
       font-weight: 600;
       color: var(--accent);
@@ -471,7 +491,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(200px, 40vw, 500px);
       font-weight: 700;
       color: rgba(255,57,85,0.025);
@@ -481,7 +501,7 @@
     }
 
     .question-headline {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(42px, 7vw, 86px);
       font-weight: 400;
       line-height: 1.08;
@@ -522,7 +542,7 @@
     }
 
     .problem-card-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 24px;
       font-weight: 600;
       color: var(--headline);
@@ -588,7 +608,7 @@
     }
 
     .cycle-step-num {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 42px;
       font-weight: 400;
       color: rgba(255,57,85,0.2);
@@ -604,7 +624,7 @@
 
     /* ─── BIG QUOTE ─── */
     .big-quote {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(28px, 5vw, 54px);
       font-weight: 400;
       font-style: italic;
@@ -684,7 +704,7 @@
     }
 
     .principle-num {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 64px;
       font-weight: 400;
       color: rgba(148,160,220,0.15);
@@ -692,7 +712,7 @@
     }
 
     .principle-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 34px;
       font-weight: 600;
       color: var(--headline);
@@ -723,7 +743,7 @@
     .chapter:hover .chapter-num { color: rgba(47,255,160,0.25); }
 
     .chapter-num {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 52px;
       font-weight: 400;
       color: rgba(148,160,220,0.15);
@@ -742,7 +762,7 @@
     }
 
     .chapter-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 26px;
       font-weight: 600;
       color: var(--headline);
@@ -796,7 +816,7 @@
     .bonus-emoji { font-size: 36px; display: block; margin-bottom: 16px; }
 
     .bonus-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 24px;
       font-weight: 600;
       color: var(--gold);
@@ -918,7 +938,7 @@
     .comp-col.yes { border-top: 3px solid var(--accent); }
 
     .comp-header {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 30px;
       font-weight: 700;
       margin-bottom: 28px;
@@ -997,7 +1017,7 @@
     .closing-section { text-align: center; }
 
     .closing-quote {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(24px, 4vw, 38px);
       font-weight: 400;
       font-style: italic;
@@ -1061,7 +1081,7 @@
     }
 
     .offer-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(44px, 7vw, 72px);
       font-weight: 400;
       line-height: 1.05;
@@ -1079,7 +1099,7 @@
     }
 
     .price-main {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 84px;
       font-weight: 600;
       color: var(--cta);
@@ -1121,7 +1141,7 @@
     .guarantee-icon { font-size: 44px; flex-shrink: 0; }
 
     .guarantee-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: 22px;
       font-weight: 600;
       color: var(--headline);
@@ -1292,7 +1312,7 @@
     }
 
     .midcta-headline {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
       font-size: clamp(26px, 4vw, 38px);
       font-weight: 400;
       color: var(--headline);
@@ -1672,7 +1692,7 @@
     </p>
     <div class="meditation-cols reveal" style="margin-top:44px;">
       <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--danger); border-radius:14px; padding:28px;">
-        <div style="font-family:'Playfair Display',Georgia,serif; font-size:20px; font-weight:700; color:var(--danger); margin-bottom:16px;">O que reforça o ciclo</div>
+        <div style="font-family:'Playfair Display','Playfair Display Fallback',Georgia,serif; font-size:20px; font-weight:700; color:var(--danger); margin-bottom:16px;">O que reforça o ciclo</div>
         <div style="font-size:14px; color:var(--muted); line-height:1.8;">
           ✕ &nbsp;Respiração diafragmática<br>
           ✕ &nbsp;Meditação de atenção plena<br>
@@ -1682,7 +1702,7 @@
         </div>
       </div>
       <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:14px; padding:28px;">
-        <div style="font-family:'Playfair Display',Georgia,serif; font-size:20px; font-weight:700; color:var(--accent); margin-bottom:16px;">O que quebra o ciclo</div>
+        <div style="font-family:'Playfair Display','Playfair Display Fallback',Georgia,serif; font-size:20px; font-weight:700; color:var(--accent); margin-bottom:16px;">O que quebra o ciclo</div>
         <div style="font-size:14px; color:var(--muted); line-height:1.8;">
           ✓ &nbsp;Deixar a respiração fluir sozinha<br>
           ✓ &nbsp;Não verificar sintomas<br>
